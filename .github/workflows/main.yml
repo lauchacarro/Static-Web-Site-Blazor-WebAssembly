@@ -23,6 +23,8 @@ jobs:
       uses: actions/checkout@v2
     - name: Build
       run: cd Static-Web-Site-Blazor-WebAssembly.UI && dotnet publish --configuration Release -o app
+    - name: Move API
+      run: cp -R Static-Web-Site-Blazor-WebAssembly.API Static-Web-Site-Blazor-WebAssembly.UI/app/wwwroot/api
     - name: Deploy To GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v1.3.0
