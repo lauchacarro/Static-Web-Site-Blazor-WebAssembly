@@ -29,6 +29,6 @@ jobs:
       with:
         # Git branch where assets will be deployed
         target_branch: master
-        build_dir: 'app/Static-Web-Site-Blazor-WebAssembly.UI/dist'
+        build_dir: 'Static-Web-Site-Blazor-WebAssembly.UI/app/wwwroot'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
