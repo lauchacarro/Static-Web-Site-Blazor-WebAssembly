@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Static_Web_Site_Blazor_WebAssembly.Shared</RootNamespace>
+  </PropertyGroup>
+
+</Project>
