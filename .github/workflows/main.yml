@@ -19,18 +19,19 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - name: Build
+    - name: Checkout
       uses: actions/checkout@v2
-    - name: Build
-      run: cd Static-Web-Site-Blazor-WebAssembly.UI && dotnet publish --configuration Release -o app
-    - name: Move API
-      run: cp -R Static-Web-Site-Blazor-WebAssembly.API Static-Web-Site-Blazor-WebAssembly.UI/app/api
+    - name: Build APP
+      run: cd Static-Web-Site-Blazor-WebAssembly.UI && dotnet publish --configuration Release -o '../release/app'
+    - name: Build API
+      run: cd Static-Web-Site-Blazor-WebAssembly.API && dotnet publish --configuration Release -o '../release/api'
+
     - name: Deploy To GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v1.3.0
       with:
         # Git branch where assets will be deployed
         target_branch: master
-        build_dir: 'Static-Web-Site-Blazor-WebAssembly.UI/app/'
+        build_dir: 'release'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
