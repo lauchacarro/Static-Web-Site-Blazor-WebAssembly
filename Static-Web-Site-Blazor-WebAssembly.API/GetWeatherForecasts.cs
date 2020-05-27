@@ -12,9 +12,9 @@ using Static_Web_Site_Blazor_WebAssembly.Shared;
 
 namespace Static_Web_Site_Blazor_WebAssembly.API
 {
-    public static class Function1
+    public static class GetWeatherForecasts
     {
-        [FunctionName("Function1")]
+        [FunctionName("GetWeatherForecasts")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "WeatherForecasts")] HttpRequest req,
             ILogger log)
